@@ -1597,7 +1597,7 @@
                     setTimeout(() => {
                         const el = document.querySelector(anchor);
                         if (el) {
-                            const offset = 90;
+                            const offset = window.innerWidth <= 768 ? 80 : 90;
                             window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
                         }
                     }, 50);
