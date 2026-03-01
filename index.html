@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ビジネスとレジャーに、上質な移動体験を。サンプルレンタカーのマンスリープラン。">
+    <title>【実績サンプル】サンプルレンタカー｜上質な長期レンタカーサービス</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           Variables & Base
+           ========================================================================== */
+        :root {
+            --color-main: #002244;
+            --color-accent: #b89c5a;
+            --color-text: #333;
+            --color-bg-light: #f9f9f9;
+            --color-red: #9a4848;
+            --color-blue: #405a81;
+            --font-mincho: 'Shippori Mincho', serif;
+            --font-sans: 'Noto Sans JP', sans-serif;
+            --transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            line-height: 1.5;
+            letter-spacing: 0.05em;
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 4%;
+        }
+
+        .section {
+            padding: 100px 0 100px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Page Display Control */
+        .page {
+            display: none;
+        }
+
+        .page.is-active {
+            display: block;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Vertical Text Utility */
+        .u-vertical {
+            writing-mode: vertical-rl;
+        }
+
+        /* Fade Animation Utilities */
+        .js-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .js-fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           Header
+           ========================================================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1090;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            padding: 0 4%;
+            gap: 20px;
+        }
+
+        .header__logo {
+            font-family: var(--font-mincho);
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--color-main);
+            letter-spacing: 0.1em;
+            cursor: pointer;
+        }
+
+        .header__nav-list {
+            display: flex;
+            gap: 25px;
+        }
+
+        .header__nav-link {
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .header__nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .header__nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header__btn {
+            background: var(--color-main);
+            color: #fff;
+            padding: 12px 25px;
+            font-size: 13px;
+            border-radius: 0;
+            transition: var(--transition);
+        }
+
+        .header__btn:hover {
+            background: var(--color-accent);
+        }
+
+        @media (max-width: 1100px) {
+            .header__nav {
+                display: none;
+            }
+        }
+
+        .header__right {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .header__nav-list {
+            display: flex;
+            gap: 25px;
+            margin-right: 32px;
+        }
+
+        /* ==========================================================================
+           Hero (Top Page)
+           ========================================================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            background: #fff;
+            padding-bottom: 120px;
+        }
+
+        .hero__image-box {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 65%;
+            height: 90%;
+            overflow: hidden;
+        }
+
+        .hero__image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 10;
+            padding-left: 10%;
+            padding-top: 140px;
+        }
+
+        .hero__title {
+            font-family: var(--font-mincho);
+            font-size: clamp(40px, 6vw, 80px);
+            line-height: 1.2;
+            color: var(--color-main);
+        }
+
+        .hero__sub {
+            display: block;
+            font-size: 14px;
+            color: var(--color-accent);
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* ==========================================================================
+           Section Header
+           ========================================================================== */
+        .c-section-title {
+            margin-bottom: 60px;
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+
+            @media (max-width: 900px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .c-section-title--center {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .c-section-title__en {
+            font-size: 60px;
+            font-weight: 700;
+            color: #f0f0f0;
+            line-height: 0.8;
+            font-family: var(--font-sans);
+        }
+
+        .c-section-title__ja {
+            font-family: var(--font-mincho);
+            font-size: 28px;
+            color: var(--color-main);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .c-section-title__ja::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--color-accent);
+        }
+
+        .c-section-title--center .c-section-title__ja::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .c-section-title__ja.no-line::after {
+            display: none;
+        }
+
+        /* ==========================================================================
+           Lineup (Cards)
+           ========================================================================== */
+        .lineup-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-accent);
+        }
+
+        .card__img {
+            aspect-ratio: 3/2;
+            overflow: hidden;
+        }
+
+        .card__img img {
+            transition: 1s;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card:hover .card__img img {
+            transform: scale(1.1);
+        }
+
+        .card__body {
+            padding: 30px;
+        }
+
+        .card__tag {
+            font-size: 11px;
+            color: var(--color-accent);
+            font-weight: 700;
+            border: 1px solid;
+            padding: 2px 8px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .card__title {
+            font-family: var(--font-mincho);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card__more {
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            color: var(--color-main);
+        }
+
+        .catalog-spec {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 4px 12px;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .catalog-spec dt {
+            color: #999;
+            font-weight: 500;
+        }
+
+        .catalog-spec dd {
+            color: var(--color-text);
+            font-weight: 700;
+        }
+
+        .c-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: var(--color-main);
+            border: 1px solid var(--color-main);
+            border-radius: 40px;
+            padding: 12px 60px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .c-btn:hover {
+            background-color: var(--color-main);
+            color: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .lineup-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           Flow
+           ========================================================================== */
+        .flow-bg {
+            background: var(--color-main);
+            color: #fff;
+        }
+
+        .flow-bg .c-section-title__en {
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        .flow-bg .c-section-title__ja {
+            color: #fff;
+        }
+
+        .flow-items {
+            display: flex;
+            justify-content: space-between;
+            counter-reset: flow;
+        }
+
+        .flow-item {
+            width: 30%;
+            position: relative;
+            padding-top: 60px;
+        }
+
+        .flow-item::before {
+            counter-increment: flow;
+            content: "0" counter(flow);
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+        }
+
+        .flow-item__title {
+            font-size: 20px;
+            font-family: var(--font-mincho);
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .flow-items {
+                flex-direction: column;
+                gap: 60px;
+            }
+
+            .flow-item {
+                width: 100%;
+            }
+        }
+
+        /* ==========================================================================
+           FAQ
+           ========================================================================== */
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item summary {
+            padding: 30px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-family: var(--font-mincho);
+            list-style: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            padding-bottom: 30px;
+            color: var(--color-text);
+            font-size: 15px;
+        }
+
+        /* ==========================================================================
+           CTA Section (画像参考)
+           ========================================================================== */
+        .cta-section {
+            position: relative;
+            padding: 80px 0;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .cta-section__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .cta-section__content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section__text {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-btn {
+            flex: 1;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: var(--transition);
+        }
+
+        .cta-btn--tel {
+            background: var(--color-red);
+        }
+
+        .cta-btn--form {
+            background: var(--color-blue);
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .cta-btn__label {
+            font-size: 13px;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .cta-btn__value {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-btn__sub {
+            font-size: 11px;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .cta-btns {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 4%;
+            }
+
+            .cta-btn {
+                padding: 20px;
+            }
+        }
+
+        /* ==========================================================================
+           Lower Page Styles
+           ========================================================================== */
+        .breadcrumb {
+            padding: 120px 0 20px;
+            background: var(--color-bg-light);
+            font-size: 12px;
+            color: #888;
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--color-accent);
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .detail-header__class {
+            font-size: 14px;
+            color: var(--color-accent);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .detail-header__title {
+            font-family: var(--font-mincho);
+            font-size: 40px;
+            color: var(--color-main);
+            margin-top: 10px;
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 料金表 */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .price-table th,
+        .price-table td {
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .price-table th {
+            background: var(--color-main);
+            color: #fff;
+            font-weight: 500;
+            font-family: var(--font-mincho);
+        }
+
+        .price-table td {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .price-table td span {
+            font-size: 12px;
+            font-weight: normal;
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* スペック・装備 */
+        .spec-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .spec-tag {
+            background: var(--color-bg-light);
+            padding: 8px 15px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 4px;
+            color: var(--color-main);
+            border: 1px solid #eee;
+        }
+
+        .option-box {
+            background: var(--color-bg-light);
+            padding: 30px;
+            border-radius: 4px;
+            border-left: 4px solid var(--color-accent);
+            margin-bottom: 40px;
+        }
+
+        .option-box__title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--color-main);
+        }
+
+        .option-list {
+            list-style: none;
+        }
+
+        .option-list li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ccc;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .option-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Text Pages */
+        .text-page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 4% 60px;
+        }
+
+        .text-page-title {
+            font-family: var(--font-mincho);
+            font-size: 36px;
+            color: var(--color-main);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .text-page-content h2 {
+            font-size: 22px;
+            color: var(--color-main);
+            margin: 60px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-bg-light);
+            font-family: var(--font-mincho);
+        }
+
+        .text-page-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .text-page-content p {
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: var(--color-text);
+            line-height: 1.8;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .info-table th,
+        .info-table td {
+            border: 1px solid #eee;
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        .info-table th {
+            background: var(--color-bg-light);
+            width: 25%;
+            font-weight: 700;
+            color: var(--color-main);
+            text-align: left;
+        }
+
+        /* Form Styles */
+        .contact-form {
+            background: var(--color-bg-light);
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--color-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .submit-btn {
+            background: var(--color-main);
+            color: #fff;
+            border: none;
+            padding: 20px 60px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+            margin: 40px auto 0;
+        }
+
+        .submit-btn:hover {
+            background: var(--color-accent);
+        }
+
+        /* ==========================================================================
+           Footer
+           ========================================================================== */
+        .footer {
+            background: #111;
+            color: #fff;
+            padding: 100px 0 40px;
+        }
+
+        .footer__logo {
+            font-family: var(--font-mincho);
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: var(--color-accent);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer__link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer__link {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .footer__link:hover {
+            color: #fff;
+        }
+
+        .footer__copy {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .footer__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           Hamburger Menu
+           ========================================================================== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            width: 44px;
+            height: 44px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1100;
+            position: relative;
+        }
+
+        .hamburger__line {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--color-main);
+            border-radius: 2px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .hamburger.is-open .hamburger__line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.is-open .hamburger__line:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.is-open .hamburger__line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Drawer overlay */
+        .nav-drawer__overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1050;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .nav-drawer__overlay.is-open {
+            opacity: 1;
+        }
+
+        /* Drawer panel */
+        .nav-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100dvh;
+            width: min(340px, 85vw);
+            background: #fff;
+            z-index: 1080;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 40px 60px;
+        }
+
+        .nav-drawer.is-open {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .nav-drawer__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-drawer__item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-drawer__link {
+            display: block;
+            padding: 18px 4px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-main);
+            cursor: pointer;
+            transition: color var(--transition);
+        }
+
+        .nav-drawer__link:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-drawer__contact {
+            display: block;
+            margin-top: 40px;
+            background: var(--color-main);
+            color: #fff;
+            text-align: center;
+            padding: 16px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background var(--transition);
+        }
+
+        .nav-drawer__contact:hover {
+            background: var(--color-accent);
+        }
+
+        @media (max-width: 1100px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .header__btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==============================================
+         HEADER (ナビゲーション拡充)
+    =============================================== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo" onclick="showPage('top')" style="cursor: pointer;">SAMPLE RENTAL</div>
+            <div class="header__right">
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a onclick="showPage('top', '#lineup')" class="header__nav-link">車種一覧</a></li>
+                        <li><a onclick="showPage('top', '#flow')" class="header__nav-link">ご利用の流れ</a></li>
+                        <li><a onclick="showPage('price')" class="header__nav-link">料金プラン</a></li>
+                        <li><a onclick="showPage('company')" class="header__nav-link">会社情報</a></li>
+                        <li><a onclick="showPage('top', '#faq')" class="header__nav-link">よくある質問</a></li>
+                    </ul>
+                </nav>
+                <a onclick="showPage('contact')" class="header__btn">お問い合わせ</a>
+            </div>
+            <!-- Hamburger Button (Mobile) -->
+            <button class="hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false"
+                aria-controls="js-drawer">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Drawer Overlay -->
+    <div class="nav-drawer__overlay" id="js-drawer-overlay" aria-hidden="true"></div>
+
+    <!-- Drawer Nav -->
+    <nav class="nav-drawer" id="js-drawer" aria-label="モバイルメニュー" aria-hidden="true">
+        <ul class="nav-drawer__list">
+            <li class="nav-drawer__item"><a onclick="drawerShowPage('top', '#lineup')" class="nav-drawer__link">車種一覧</a>
+            </li>
+            <li class="nav-drawer__item"><a onclick="drawerShowPage('top', '#flow')" class="nav-drawer__link">ご利用の流れ</a>
+            </li>
+            <li class="nav-drawer__item"><a onclick="drawerShowPage('price')" class="nav-drawer__link">料金プラン</a></li>
+            <li class="nav-drawer__item"><a onclick="drawerShowPage('company')" class="nav-drawer__link">会社情報</a></li>
+            <li class="nav-drawer__item"><a onclick="drawerShowPage('top', '#faq')" class="nav-drawer__link">よくある質問</a>
+            </li>
+        </ul>
+        <a onclick="drawerShowPage('contact')" class="nav-drawer__contact">お問い合わせ</a>
+    </nav>
+
+    <!-- ==============================================
+         PAGE: TOP
+    =============================================== -->
+    <div id="page-top" class="page is-active">
+        <main>
+            <!-- HERO -->
+            <section class="hero">
+                <div class="hero__content">
+                    <span class="hero__sub u-vertical">PREMIUM LONG-TERM RENTAL</span>
+                    <h1 class="hero__title u-vertical">移動を、<br>もっと自由に。<br>もっと贅沢に。</h1>
+                </div>
+                <div class="hero__image-box">
+                    <img id="img-hero-top" src="./bg_daytime_silver.png" alt="シルバーの高級レンタカー（昼間）">
+                </div>
+            </section>
+
+            <!-- CONCEPT -->
+            <section class="concept section" style="background-color: #f0f0f0;">
+                <div class="container">
+                    <div class="u-text-center c-section-title--center">
+                        <h2 class="concept__title c-section-title__ja no-line js-fade-in"
+                            style="margin-bottom: 2rem; line-height: 1.4; display: inline-block;">
+                            高級志向のあなたのための、<br>エグゼクティブなレンタカー
+                        </h2>
+                        <p class="concept__description js-fade-in"
+                            style="font-size: 1.1rem; line-height: 2; color: #444; transition-delay: 0.2s;">
+                            洗練された一台と共に、街中に溶け込むモダンなカーライフを。<br>
+                            日常の移動を特別なひとときへと変える、上質な体験を提供いたします。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- LINEUP -->
+            <section id="lineup" class="section">
+                <div class="container">
+                    <header class="c-section-title js-fade-in">
+                        <span class="c-section-title__en">LINEUP</span>
+                        <h2 class="c-section-title__ja">厳選された車両ラインナップ</h2>
+                    </header>
+
+                    <div class="lineup-grid">
+                        <article class="card js-fade-in">
+                            <div class="card__img"><img
+                                    src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80"
+                                    alt="Luxury Sedan"></div>
+                            <div class="card__body">
+                                <span class="card__tag">SEDAN</span>
+                                <h3 class="card__title">エグゼクティブ・セダン</h3>
+                                <p>ビジネスシーンに品格を添える、静寂性と走行性能を極めた一台。</p>
+                                <a onclick="showPage('detail')" class="card__more">VIEW DETAILS <span>→</span></a>
+                            </div>
+                        </article>
+                        <article class="card js-fade-in" style="transition-delay:0.15s">
+                            <div class="card__img"><img
+                                    src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80"
+                                    alt="SUV"></div>
+                            <div class="card__body">
+                                <span class="card__tag">SUV</span>
+                                <h3 class="card__title">プレミアム・SUV</h3>
+                                <p>レジャーでも妥協しない。圧倒的な存在感と使い勝手の良さを両立。</p>
+                                <a onclick="showPage('detail')" class="card__more">VIEW DETAILS <span>→</span></a>
+                            </div>
+                        </article>
+                        <article class="card js-fade-in" style="transition-delay:0.3s">
+                            <div class="card__img"><img
+                                    src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80"
+                                    alt="EV"></div>
+                            <div class="card__body">
+                                <span class="card__tag">EV / HYBRID</span>
+                                <h3 class="card__title">次世代・エコカー</h3>
+                                <p>環境への配慮と最新技術を体感。未来のスタンダードをマンスリーで。</p>
+                                <a onclick="showPage('detail')" class="card__more">VIEW DETAILS <span>→</span></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 48px;">
+                        <a onclick="showPage('catalog')" class="c-btn">車種一覧を見る</a>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <!-- FLOW -->
+            <section id="flow" class="section flow-bg">
+                <div class="container">
+                    <header class="c-section-title js-fade-in">
+                        <span class="c-section-title__en">FLOW</span>
+                        <h2 class="c-section-title__ja">ご利用までのステップ</h2>
+                    </header>
+                    <div class="flow-items">
+                        <div class="flow-item js-fade-in" style="transition-delay:0.1s">
+                            <h3 class="flow-item__title">コンサルティング</h3>
+                            <p>用途や予算に合わせ、最適なプランをご提案。法人契約のご相談も承ります。</p>
+                        </div>
+                        <div class="flow-item js-fade-in" style="transition-delay:0.25s">
+                            <h3 class="flow-item__title">審査・ご契約</h3>
+                            <p>迅速な審査でスムーズな契約を実現。必要な書類はすべてオンラインで完結可能です。</p>
+                        </div>
+                        <div class="flow-item js-fade-in" style="transition-delay:0.4s">
+                            <h3 class="flow-item__title">納車・アフターケア</h3>
+                            <p>整備の行き届いた車両をご指定の場所、または店舗にてお引渡しいたします。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="section">
+                <div class="container">
+                    <header class="c-section-title js-fade-in">
+                        <span class="c-section-title__en">FAQ</span>
+                        <h2 class="c-section-title__ja">よくあるご質問</h2>
+                    </header>
+                    <div class="faq-list">
+                        <details class="faq-item js-fade-in">
+                            <summary>法人での契約は可能ですか？</summary>
+                            <div class="faq-content">はい、多くの企業様にご利用いただいております。社用車としての導入や、プロジェクト単位での期間限定利用など、柔軟に対応いたします。
+                            </div>
+                        </details>
+                        <details class="faq-item js-fade-in" style="transition-delay:0.15s">
+                            <summary>任意保険の補償内容について教えてください。</summary>
+                            <div class="faq-content">対人・対物無制限の基本補償に加え、車両補償、ロードサービスが全てのプランに含まれております。</div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- ==============================================
+         PAGE: CATALOG
+    =============================================== -->
+    <div id="page-catalog" class="page">
+        <nav class="breadcrumb">
+            <div class="container"><a onclick="showPage('top')">HOME</a> <span>/</span> 車種一覧</div>
+        </nav>
+        <main class="container" style="padding: 60px 0 120px;">
+            <div class="detail-header">
+                <span class="detail-header__class">LINEUP</span>
+                <h1 class="detail-header__title">車種一覧</h1>
+            </div>
+            <div class="lineup-grid">
+                <!-- Sedan -->
+                <article class="card">
+                    <div class="card__img"><img
+                            src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80"
+                            alt="Sedan"></div>
+                    <div class="card__body">
+                        <span class="card__tag">SEDAN</span>
+                        <h3 class="card__title">エグゼクティブ・セダン</h3>
+                        <p>ビジネスシーンに品格を添える、静寂性と走行性能を極めた一台。</p>
+                        <dl class="catalog-spec">
+                            <dt>排気量</dt>
+                            <dd>2,000cc</dd>
+                            <dt>定員</dt>
+                            <dd>5名</dd>
+                            <dt>マンスリー料金</dt>
+                            <dd>￥158,000～</dd>
+                        </dl>
+                        <a onclick="showPage('detail')" class="card__more">VIEW DETAILS <span>→</span></a>
+                    </div>
+                </article>
+                <!-- SUV -->
+                <article class="card">
+                    <div class="card__img"><img
+                            src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80"
+                            alt="SUV"></div>
+                    <div class="card__body">
+                        <span class="card__tag">SUV</span>
+                        <h3 class="card__title">プレミアム・SUV</h3>
+                        <p>レジャーでも妥協しない。圧倒的な存在感と使い勝手の良さを両立。</p>
+                        <dl class="catalog-spec">
+                            <dt>排気量</dt>
+                            <dd>2,500cc</dd>
+                            <dt>定員</dt>
+                            <dd>5名</dd>
+                            <dt>マンスリー料金</dt>
+                            <dd>￥185,000～</dd>
+                        </dl>
+                        <a onclick="showPage('detail')" class="card__more">VIEW DETAILS <span>→</span></a>
+                    </div>
+                </article>
+                <!-- EV -->
+                <article class="card">
+                    <div class="card__img"><img
+                            src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80"
+                            alt="EV"></div>
+                    <div class="card__body">
+                        <span class="card__tag">EV / HYBRID</span>
+                        <h3 class="card__title">次世代・エコカー</h3>
+                        <p>環境への配慮と最新技術を体感。未来のスタンダードをマンスリーで。</p>
+                        <dl class="catalog-spec">
+                            <dt>排気量</dt>
+                            <dd>EV / 1,800cc HV</dd>
+                            <dt>定員</dt>
+                            <dd>5名</dd>
+                            <dt>マンスリー料金</dt>
+                            <dd>￥138,000～</dd>
+                        </dl>
+                        <a onclick="showPage('detail')" class="card__more">VIEW DETAILS <span>→</span></a>
+                    </div>
+                </article>
+
+            </div>
+
+        </main>
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <img class="cta-section__bg" id="img-cta-bg-1" src="./bg_cta.png" alt="CTA Background">
+            <div class="container cta-section__content">
+                <p class="cta-section__text">レンタカーのお問い合わせ・お申し込みは<br>下記からお気軽にお問い合わせください！</p>
+                <div class="cta-btns">
+                    <a href="tel:0829613344" class="cta-btn cta-btn--tel">
+                        <span class="cta-btn__label">Tel</span>
+                        <span class="cta-btn__value">082-961-3344</span>
+                        <span class="cta-btn__sub">受付時間 9:00〜17:00</span>
+                    </a>
+                    <a onclick="showPage('contact')" class="cta-btn cta-btn--form">
+                        <span class="cta-btn__label">フォームでのお問い合わせ</span>
+                        <span class="cta-btn__value">Contact Form</span>
+                        <span class="cta-btn__sub">24時間年中無休で受付中</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         PAGE: DETAIL
+    =============================================== -->
+    <div id="page-detail" class="page">
+        <nav class="breadcrumb">
+            <div class="container"><a onclick="showPage('top')">HOME</a> <span>/</span> 車種詳細</div>
+        </nav>
+        <main class="container" style="padding: 60px 0 120px;">
+            <div class="detail-header">
+                <span class="detail-header__class">EXECUTIVE CLASS</span>
+                <h1 class="detail-header__title">エグゼクティブ・セダン</h1>
+            </div>
+            <div class="detail-content">
+                <div class="detail-left">
+                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80"
+                        alt="Sedan" style="width:100%; border-radius:4px;">
+                </div>
+                <div class="detail-right">
+                    <h3 class="c-section-title__ja" style="font-size:22px; margin-bottom:20px;">ご利用料金（税込）</h3>
+                    <table class="price-table">
+                        <tr>
+                            <th>当日</th>
+                            <td>¥15,400</td>
+                        </tr>
+                        <tr>
+                            <th>1週間</th>
+                            <td>¥88,000</td>
+                        </tr>
+                        <tr>
+                            <th>1ヶ月</th>
+                            <td>¥158,000</td>
+                        </tr>
+                    </table>
+                    <div class="option-box">
+                        <h4 class="option-box__title">安心の補償制度</h4>
+                        <ul class="option-list">
+                            <li><span>免責補償制度</span><strong>¥2,200 / 24h</strong></li>
+                            <li><span>NOCサポート</span><strong>¥1,100 / 24h</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="cta-section">
+            <img class="cta-section__bg" id="img-cta-bg-2" src="./bg_cta.png" alt="CTA Background">
+            <div class="container cta-section__content">
+                <p class="cta-section__text">この車種のご予約・空き状況確認は<br>お電話またはフォームより承っております</p>
+                <div class="cta-btns">
+                    <a href="tel:0829613344" class="cta-btn cta-btn--tel">
+                        <span class="cta-btn__label">Tel</span>
+                        <span class="cta-btn__value">082-961-3344</span>
+                        <span class="cta-btn__sub">受付時間 9:00〜17:00</span>
+                    </a>
+                    <a onclick="showPage('contact')" class="cta-btn cta-btn--form">
+                        <span class="cta-btn__label">フォームでのお問い合わせ</span>
+                        <span class="cta-btn__value">Contact Form</span>
+                        <span class="cta-btn__sub">24時間年中無休で受付中</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <img class="cta-section__bg" id="img-cta-bg-1" src="./bg_cta.png" alt="CTA Background">
+            <div class="container cta-section__content">
+                <p class="cta-section__text">レンタカーのお問い合わせ・お申し込みは<br>下記からお気軽にお問い合わせください！</p>
+                <div class="cta-btns">
+                    <a href="tel:0829613344" class="cta-btn cta-btn--tel">
+                        <span class="cta-btn__label">Tel</span>
+                        <span class="cta-btn__value">082-961-3344</span>
+                        <span class="cta-btn__sub">受付時間 9:00〜17:00</span>
+                    </a>
+                    <a onclick="showPage('contact')" class="cta-btn cta-btn--form">
+                        <span class="cta-btn__label">フォームでのお問い合わせ</span>
+                        <span class="cta-btn__value">Contact Form</span>
+                        <span class="cta-btn__sub">24時間年中無休で受付中</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         PAGE: 料金プラン / 会社情報 / お問い合わせ
+    =============================================== -->
+    <div id="page-price" class="page">
+        <nav class="breadcrumb">
+            <div class="container"><a onclick="showPage('top')">HOME</a> <span>/</span> 料金プラン</div>
+        </nav>
+        <div class="text-page-container">
+            <h1 class="text-page-title">料金プラン一覧</h1>
+            <div class="text-page-content">
+                <p>各クラスの基本料金となります。長期利用（マンスリー）ほど1日あたりの料金がお得になります。</p>
+                <table class="info-table">
+                    <tr>
+                        <th>クラス</th>
+                        <th>当日(24h)</th>
+                        <th>1週間</th>
+                        <th>1ヶ月</th>
+                    </tr>
+                    <tr>
+                        <td>セダン</td>
+                        <td>¥15,400</td>
+                        <td>¥88,000</td>
+                        <td>¥158,000</td>
+                    </tr>
+                    <tr>
+                        <td>SUV</td>
+                        <td>¥18,700</td>
+                        <td>¥105,000</td>
+                        <td>¥185,000</td>
+                    </tr>
+                    <tr>
+                        <td>エコカー</td>
+                        <td>¥13,200</td>
+                        <td>¥77,000</td>
+                        <td>¥138,000</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-company" class="page">
+        <nav class="breadcrumb">
+            <div class="container"><a onclick="showPage('top')">HOME</a> <span>/</span> 会社情報</div>
+        </nav>
+        <div class="text-page-container">
+            <h1 class="text-page-title">会社情報</h1>
+            <table class="info-table">
+                <tr>
+                    <th>会社名</th>
+                    <td>株式会社サンプルレンタカー</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>〒100-0000 東京都千代田区丸の内X-X-X</td>
+                </tr>
+                <tr>
+                    <th>事業内容</th>
+                    <td>レンタカー事業、カーリース事業</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="page-contact" class="page">
+        <nav class="breadcrumb">
+            <div class="container"><a onclick="showPage('top')">HOME</a> <span>/</span> お問い合わせ</div>
+        </nav>
+        <div class="text-page-container">
+            <h1 class="text-page-title">お問い合わせ</h1>
+            <p style="text-align: center; margin-bottom: 40px;">車両の空き状況確認、お見積りのご依頼など、お気軽にお問い合わせください。</p>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('お問い合わせを送信しました（デモ）');">
+                <div class="form-group">
+                    <label class="form-label">お名前</label>
+                    <input type="text" class="form-control" placeholder="例：山田 太郎" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">メールアドレス</label>
+                    <input type="email" class="form-control" placeholder="example@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">お問い合わせ内容</label>
+                    <textarea class="form-control" rows="6" placeholder="ご希望の車種、利用期間などをご記入ください"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">送信する</button>
+            </form>
+        </div>
+    </div>
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <img class="cta-section__bg" id="img-cta-bg-1" src="./bg_cta.png" alt="CTA Background">
+        <div class="container cta-section__content">
+            <p class="cta-section__text">レンタカーのお問い合わせ・お申し込みは<br>下記からお気軽にお問い合わせください！</p>
+            <div class="cta-btns">
+                <a href="tel:0829613344" class="cta-btn cta-btn--tel">
+                    <span class="cta-btn__label">Tel</span>
+                    <span class="cta-btn__value">082-961-3344</span>
+                    <span class="cta-btn__sub">受付時間 9:00〜17:00</span>
+                </a>
+                <a onclick="showPage('contact')" class="cta-btn cta-btn--form">
+                    <span class="cta-btn__label">フォームでのお問い合わせ</span>
+                    <span class="cta-btn__value">Contact Form</span>
+                    <span class="cta-btn__sub">24時間年中無休で受付中</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <div class="footer__logo">SAMPLE RENTAL</div>
+                    <p style="color: #666; font-size: 14px;">上質な車両と、心に寄り添うサービスで、<br>あなたの移動を特別な時間へと変えていきます。</p>
+                </div>
+                <nav>
+                    <ul class="footer__link-list">
+                        <li><a onclick="showPage('top', '#lineup')" class="footer__link">車種一覧</a></li>
+                        <li><a onclick="showPage('top', '#flow')" class="footer__link">ご利用の流れ</a></li>
+                        <li><a onclick="showPage('price')" class="footer__link">料金プラン</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul class="footer__link-list">
+                        <li><a onclick="showPage('company')" class="footer__link">会社情報</a></li>
+                        <li><a onclick="showPage('contact')" class="footer__link">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__copy">&copy; 2024 Sample Rental Co., Ltd. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const apiKey = "";
+
+        async function generateImages() {
+            // Hero Image
+            try {
+                const heroRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`, {
+                    method: 'POST',
+                    body: JSON.stringify({ instances: { prompt: "A luxury black premium sedan car parked in front of a modern high-end architectural building, soft cinematic lighting, 8k, professional photography" }, parameters: { sampleCount: 1 } })
+                });
+                const heroData = await heroRes.json();
+                if (heroData.predictions) document.getElementById('img-hero-top').src = `data:image/png;base64,${heroData.predictions[0].bytesBase64Encoded}`;
+            } catch (e) { }
+            // CTA Background Image is pre-set in HTML
+        }
+
+        function showPage(pageId, anchor = null) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('is-active'));
+
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('is-active');
+                if (anchor) {
+                    setTimeout(() => {
+                        const el = document.querySelector(anchor);
+                        if (el) {
+                            const offset = 90;
+                            window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+                        }
+                    }, 50);
+                } else {
+                    window.scrollTo(0, 0);
+                }
+            }
+        }
+
+        window.onload = () => {
+            generateImages();
+
+            // Scroll Fade Animation
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
+            }, { threshold: 0.2 });
+            document.querySelectorAll('.js-fade-in').forEach(el => fadeObserver.observe(el));
+
+            // Hamburger Menu
+            const hamburger = document.getElementById('js-hamburger');
+            const drawer = document.getElementById('js-drawer');
+            const overlay = document.getElementById('js-drawer-overlay');
+
+            function openDrawer() {
+                overlay.style.display = 'block';
+                requestAnimationFrame(() => {
+                    hamburger.classList.add('is-open');
+                    drawer.classList.add('is-open');
+                    overlay.classList.add('is-open');
+                });
+                hamburger.setAttribute('aria-expanded', 'true');
+                drawer.setAttribute('aria-hidden', 'false');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeDrawer() {
+                hamburger.classList.remove('is-open');
+                drawer.classList.remove('is-open');
+                overlay.classList.remove('is-open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                drawer.setAttribute('aria-hidden', 'true');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                setTimeout(() => { overlay.style.display = 'none'; }, 500);
+            }
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.contains('is-open') ? closeDrawer() : openDrawer();
+            });
+            overlay.addEventListener('click', closeDrawer);
+        };
+
+        // Wrapper to close drawer then navigate
+        function drawerShowPage(pageId, anchor = null) {
+            const drawer = document.getElementById('js-drawer');
+            const overlay = document.getElementById('js-drawer-overlay');
+            const hamburger = document.getElementById('js-hamburger');
+            hamburger.classList.remove('is-open');
+            drawer.classList.remove('is-open');
+            overlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                showPage(pageId, anchor);
+            }, 350);
+        }
+    </script>
+</body>
+
+</html>
