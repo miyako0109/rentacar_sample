@@ -774,6 +774,10 @@ img {
     padding: 60px 4% 60px;
 }
 
+.text-page-container--wide {
+    max-width: 1200px;
+}
+
 .table-scroll {
     width: 100%;
     overflow-x: auto;

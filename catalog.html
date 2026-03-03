@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('gate.html?redirect=' + encodeURIComponent(location.pathname.split('/').pop())); }</script>
+    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('gate.html?redirect=' + encodeURIComponent('index.html')); }</script>
     <header class="header">
         <div class="header__inner">
             <div class="header__logo"><a href="index.html">SAMPLE RENTAL</a></div>
@@ -57,7 +57,7 @@
         <div class="container"><a href="index.html">HOME</a> <span>/</span> 車種一覧</div>
     </nav>
     <main>
-        <div class="text-page-container">
+        <div class="text-page-container text-page-container--wide">
             <div class="detail-header">
                 <span class="detail-header__class">LINEUP</span>
                 <h1 class="detail-header__title">車種一覧</h1>
