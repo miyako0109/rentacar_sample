@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="車種一覧｜サンプルレンタカー">
+    <meta name="robots" content="noindex">
+    <title>車種一覧｜サンプルレンタカー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <script>if (!sessionStorage.getItem('site_auth')) { location.replace('../index.html'); }</script>
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo"><a href="index.html">SAMPLE RENTAL</a></div>
+            <div class="header__right">
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="index.html#lineup" class="header__nav-link">車種一覧</a></li>
+                        <li><a href="index.html#flow" class="header__nav-link">ご利用の流れ</a></li>
+                        <li><a href="price.html" class="header__nav-link">料金プラン</a></li>
+                        <li><a href="company.html" class="header__nav-link">会社情報</a></li>
+                        <li><a href="index.html#faq" class="header__nav-link">よくある質問</a></li>
+                    </ul>
+                </nav>
+                <a href="contact.html" class="header__btn">お問い合わせ</a>
+            </div>
+            <button class="hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="js-drawer">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="nav-drawer__overlay" id="js-drawer-overlay" aria-hidden="true"></div>
+    <nav class="nav-drawer" id="js-drawer" aria-label="モバイルメニュー" aria-hidden="true">
+        <ul class="nav-drawer__list">
+            <li class="nav-drawer__item"><a href="index.html#lineup" class="nav-drawer__link">車種一覧</a></li>
+            <li class="nav-drawer__item"><a href="index.html#flow" class="nav-drawer__link">ご利用の流れ</a></li>
+            <li class="nav-drawer__item"><a href="price.html" class="nav-drawer__link">料金プラン</a></li>
+            <li class="nav-drawer__item"><a href="company.html" class="nav-drawer__link">会社情報</a></li>
+            <li class="nav-drawer__item"><a href="index.html#faq" class="nav-drawer__link">よくある質問</a></li>
+        </ul>
+        <a href="contact.html" class="nav-drawer__contact">お問い合わせ</a>
+    </nav>
+
+    <nav class="breadcrumb">
+        <div class="container"><a href="index.html">HOME</a> <span>/</span> 車種一覧</div>
+    </nav>
+    <main class="container" style="padding: 60px 0 120px;">
+        <div class="detail-header">
+            <span class="detail-header__class">LINEUP</span>
+            <h1 class="detail-header__title">車種一覧</h1>
+        </div>
+        <div class="lineup-grid">
+            <article class="card">
+                <div class="card__img"><img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" alt="Sedan"></div>
+                <div class="card__body">
+                    <span class="card__tag">SEDAN</span>
+                    <h3 class="card__title">エグゼクティブ・セダン</h3>
+                    <p>ビジネスシーンに品格を添える、静寂性と走行性能を極めた一台。</p>
+                    <dl class="catalog-spec">
+                        <dt>排気量</dt>
+                        <dd>2,000cc</dd>
+                        <dt>定員</dt>
+                        <dd>5名</dd>
+                        <dt>マンスリー料金</dt>
+                        <dd>￥158,000～</dd>
+                    </dl>
+                    <a href="detail.html" class="card__more">VIEW DETAILS <span>→</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="SUV"></div>
+                <div class="card__body">
+                    <span class="card__tag">SUV</span>
+                    <h3 class="card__title">プレミアム・SUV</h3>
+                    <p>レジャーでも妥協しない。圧倒的な存在感と使い勝手の良さを両立。</p>
+                    <dl class="catalog-spec">
+                        <dt>排気量</dt>
+                        <dd>2,500cc</dd>
+                        <dt>定員</dt>
+                        <dd>5名</dd>
+                        <dt>マンスリー料金</dt>
+                        <dd>￥185,000～</dd>
+                    </dl>
+                    <a href="detail.html" class="card__more">VIEW DETAILS <span>→</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img"><img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="EV"></div>
+                <div class="card__body">
+                    <span class="card__tag">EV / HYBRID</span>
+                    <h3 class="card__title">次世代・エコカー</h3>
+                    <p>環境への配慮と最新技術を体感。未来のスタンダードをマンスリーで。</p>
+                    <dl class="catalog-spec">
+                        <dt>排気量</dt>
+                        <dd>EV / 1,800cc HV</dd>
+                        <dt>定員</dt>
+                        <dd>5名</dd>
+                        <dt>マンスリー料金</dt>
+                        <dd>￥138,000～</dd>
+                    </dl>
+                    <a href="detail.html" class="card__more">VIEW DETAILS <span>→</span></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <div class="cta-section">
+        <img class="cta-section__bg" src="../img/bg_cta.png" alt="CTA Background">
+        <div class="container cta-section__content">
+            <p class="cta-section__text">レンタカーのお問い合わせ・お申し込みは<br>下記からお気軽にお問い合わせください！</p>
+            <div class="cta-btns">
+                <a href="tel:0829613344" class="cta-btn cta-btn--tel">
+                    <span class="cta-btn__label">Tel</span>
+                    <span class="cta-btn__value">082-961-3344</span>
+                    <span class="cta-btn__sub">受付時間 9:00〜17:00</span>
+                </a>
+                <a href="contact.html" class="cta-btn cta-btn--form">
+                    <span class="cta-btn__label">フォームでのお問い合わせ</span>
+                    <span class="cta-btn__value">Contact Form</span>
+                    <span class="cta-btn__sub">24時間年中無休で受付中</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <div class="footer__logo">SAMPLE RENTAL</div>
+                    <p style="color: #666; font-size: 14px;">上質な車両と、心に寄り添うサービスで、<br>あなたの移動を特別な時間へと変えていきます。</p>
+                </div>
+                <nav>
+                    <ul class="footer__link-list">
+                        <li><a href="index.html#lineup" class="footer__link">車種一覧</a></li>
+                        <li><a href="index.html#flow" class="footer__link">ご利用の流れ</a></li>
+                        <li><a href="price.html" class="footer__link">料金プラン</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul class="footer__link-list">
+                        <li><a href="company.html" class="footer__link">会社情報</a></li>
+                        <li><a href="contact.html" class="footer__link">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__copy">&copy; 2024 Sample Rental Co., Ltd. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            var hamburger = document.getElementById('js-hamburger');
+            var drawer = document.getElementById('js-drawer');
+            var overlay = document.getElementById('js-drawer-overlay');
+            function openDrawer() {
+                overlay.style.display = 'block';
+                requestAnimationFrame(function() {
+                    hamburger.classList.add('is-open');
+                    drawer.classList.add('is-open');
+                    overlay.classList.add('is-open');
+                });
+                hamburger.setAttribute('aria-expanded', 'true');
+                drawer.setAttribute('aria-hidden', 'false');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeDrawer() {
+                hamburger.classList.remove('is-open');
+                drawer.classList.remove('is-open');
+                overlay.classList.remove('is-open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                drawer.setAttribute('aria-hidden', 'true');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                setTimeout(function() { overlay.style.display = 'none'; }, 500);
+            }
+            hamburger.addEventListener('click', function() { hamburger.classList.contains('is-open') ? closeDrawer() : openDrawer(); });
+            overlay.addEventListener('click', closeDrawer);
+        })();
+    </script>
+</body>
+
+</html>
