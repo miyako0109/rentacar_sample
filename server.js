@@ -1,7 +1,7 @@
 /**
  * Basic認証付きローカルサーバー
  * 使い方: node server.js
- * ブラウザで http://localhost:3000/ を開く
+ * ブラウザで http://localhost:3000/html/index.html を開く
  *
  * ユーザー名・パスワードは下の BASIC_USER / BASIC_PASS を変更してください。
  */
@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
   }
 
   const urlPath = (req.url || '/').split('?')[0];
-  let filePath = path.join(ROOT, urlPath === '/' ? 'index.html' : urlPath);
+  let filePath = path.join(ROOT, urlPath === '/' ? 'html/index.html' : urlPath);
   filePath = path.normalize(filePath);
   const relative = path.relative(ROOT, filePath);
   if (relative.startsWith('..') || path.isAbsolute(relative)) {
@@ -86,6 +86,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Basic認証付きサーバー: http://localhost:${PORT}/`);
+  console.log(`Basic認証付きサーバー: http://localhost:${PORT}/html/index.html`);
   console.log(`ユーザー: ${BASIC_USER} / パスワード: ${BASIC_PASS}`);
 });

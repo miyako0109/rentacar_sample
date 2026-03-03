@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="会社情報｜サンプルレンタカー">
+    <meta name="description" content="お問い合わせ｜サンプルレンタカー">
     <meta name="robots" content="noindex">
-    <title>会社情報｜サンプルレンタカー</title>
+    <title>お問い合わせ｜サンプルレンタカー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('gate.html'); }</script>
+    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('../index.html'); }</script>
     <header class="header">
         <div class="header__inner">
             <div class="header__logo"><a href="index.html">SAMPLE RENTAL</a></div>
@@ -51,28 +51,30 @@
     </nav>
 
     <nav class="breadcrumb">
-        <div class="container"><a href="index.html">HOME</a> <span>/</span> 会社情報</div>
+        <div class="container"><a href="index.html">HOME</a> <span>/</span> お問い合わせ</div>
     </nav>
     <div class="text-page-container">
-        <h1 class="text-page-title">会社情報</h1>
-        <table class="info-table">
-            <tr>
-                <th>会社名</th>
-                <td>株式会社サンプルレンタカー</td>
-            </tr>
-            <tr>
-                <th>所在地</th>
-                <td>〒100-0000 東京都千代田区丸の内X-X-X</td>
-            </tr>
-            <tr>
-                <th>事業内容</th>
-                <td>レンタカー事業、カーリース事業</td>
-            </tr>
-        </table>
+        <h1 class="text-page-title">お問い合わせ</h1>
+        <p style="text-align: center; margin-bottom: 40px;">車両の空き状況確認、お見積りのご依頼など、お気軽にお問い合わせください。</p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('お問い合わせを送信しました（デモ）');">
+            <div class="form-group">
+                <label class="form-label">お名前</label>
+                <input type="text" class="form-control" placeholder="例：山田 太郎" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">メールアドレス</label>
+                <input type="email" class="form-control" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">お問い合わせ内容</label>
+                <textarea class="form-control" rows="6" placeholder="ご希望の車種、利用期間などをご記入ください"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">送信する</button>
+        </form>
     </div>
 
     <div class="cta-section">
-        <img class="cta-section__bg" src="img/bg_cta.png" alt="CTA Background">
+        <img class="cta-section__bg" src="../img/bg_cta.png" alt="CTA Background">
         <div class="container cta-section__content">
             <p class="cta-section__text">レンタカーのお問い合わせ・お申し込みは<br>下記からお気軽にお問い合わせください！</p>
             <div class="cta-btns">

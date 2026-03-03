@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="会社情報｜サンプルレンタカー">
+    <meta name="description" content="車種一覧｜サンプルレンタカー">
     <meta name="robots" content="noindex">
-    <title>会社情報｜サンプルレンタカー</title>
+    <title>車種一覧｜サンプルレンタカー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('gate.html'); }</script>
+    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('../index.html'); }</script>
     <header class="header">
         <div class="header__inner">
             <div class="header__logo"><a href="index.html">SAMPLE RENTAL</a></div>
@@ -51,28 +51,70 @@
     </nav>
 
     <nav class="breadcrumb">
-        <div class="container"><a href="index.html">HOME</a> <span>/</span> 会社情報</div>
+        <div class="container"><a href="index.html">HOME</a> <span>/</span> 車種一覧</div>
     </nav>
-    <div class="text-page-container">
-        <h1 class="text-page-title">会社情報</h1>
-        <table class="info-table">
-            <tr>
-                <th>会社名</th>
-                <td>株式会社サンプルレンタカー</td>
-            </tr>
-            <tr>
-                <th>所在地</th>
-                <td>〒100-0000 東京都千代田区丸の内X-X-X</td>
-            </tr>
-            <tr>
-                <th>事業内容</th>
-                <td>レンタカー事業、カーリース事業</td>
-            </tr>
-        </table>
-    </div>
+    <main class="container" style="padding: 60px 0 120px;">
+        <div class="detail-header">
+            <span class="detail-header__class">LINEUP</span>
+            <h1 class="detail-header__title">車種一覧</h1>
+        </div>
+        <div class="lineup-grid">
+            <article class="card">
+                <div class="card__img"><img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" alt="Sedan"></div>
+                <div class="card__body">
+                    <span class="card__tag">SEDAN</span>
+                    <h3 class="card__title">エグゼクティブ・セダン</h3>
+                    <p>ビジネスシーンに品格を添える、静寂性と走行性能を極めた一台。</p>
+                    <dl class="catalog-spec">
+                        <dt>排気量</dt>
+                        <dd>2,000cc</dd>
+                        <dt>定員</dt>
+                        <dd>5名</dd>
+                        <dt>マンスリー料金</dt>
+                        <dd>￥158,000～</dd>
+                    </dl>
+                    <a href="detail.html" class="card__more">VIEW DETAILS <span>→</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="SUV"></div>
+                <div class="card__body">
+                    <span class="card__tag">SUV</span>
+                    <h3 class="card__title">プレミアム・SUV</h3>
+                    <p>レジャーでも妥協しない。圧倒的な存在感と使い勝手の良さを両立。</p>
+                    <dl class="catalog-spec">
+                        <dt>排気量</dt>
+                        <dd>2,500cc</dd>
+                        <dt>定員</dt>
+                        <dd>5名</dd>
+                        <dt>マンスリー料金</dt>
+                        <dd>￥185,000～</dd>
+                    </dl>
+                    <a href="detail.html" class="card__more">VIEW DETAILS <span>→</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img"><img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="EV"></div>
+                <div class="card__body">
+                    <span class="card__tag">EV / HYBRID</span>
+                    <h3 class="card__title">次世代・エコカー</h3>
+                    <p>環境への配慮と最新技術を体感。未来のスタンダードをマンスリーで。</p>
+                    <dl class="catalog-spec">
+                        <dt>排気量</dt>
+                        <dd>EV / 1,800cc HV</dd>
+                        <dt>定員</dt>
+                        <dd>5名</dd>
+                        <dt>マンスリー料金</dt>
+                        <dd>￥138,000～</dd>
+                    </dl>
+                    <a href="detail.html" class="card__more">VIEW DETAILS <span>→</span></a>
+                </div>
+            </article>
+        </div>
+    </main>
 
     <div class="cta-section">
-        <img class="cta-section__bg" src="img/bg_cta.png" alt="CTA Background">
+        <img class="cta-section__bg" src="../img/bg_cta.png" alt="CTA Background">
         <div class="container cta-section__content">
             <p class="cta-section__text">レンタカーのお問い合わせ・お申し込みは<br>下記からお気軽にお問い合わせください！</p>
             <div class="cta-btns">
