@@ -60,7 +60,8 @@
         <h1 class="text-page-title">料金プラン一覧</h1>
         <div class="text-page-content">
             <p>各クラスの基本料金となります。長期利用（マンスリー）ほど1日あたりの料金がお得になります。</p>
-            <table class="info-table">
+            <div class="table-scroll">
+                <table class="info-table">
                 <tr>
                     <th>クラス</th>
                     <th>当日(24h)</th>
@@ -85,7 +86,8 @@
                     <td>¥77,000</td>
                     <td>¥138,000</td>
                 </tr>
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -162,6 +164,13 @@
             }
             hamburger.addEventListener('click', function () { hamburger.classList.contains('is-open') ? closeDrawer() : openDrawer(); });
             overlay.addEventListener('click', closeDrawer);
+
+            var drawerLinks = document.querySelectorAll('.nav-drawer__link, .nav-drawer__contact');
+            drawerLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    closeDrawer();
+                });
+            });
         })();
     </script>
 </body>

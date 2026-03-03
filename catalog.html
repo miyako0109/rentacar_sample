@@ -56,12 +56,13 @@
     <nav class="breadcrumb">
         <div class="container"><a href="index.html">HOME</a> <span>/</span> 車種一覧</div>
     </nav>
-    <main class="container" style="padding: 60px 0 120px;">
-        <div class="detail-header">
-            <span class="detail-header__class">LINEUP</span>
-            <h1 class="detail-header__title">車種一覧</h1>
-        </div>
-        <div class="lineup-grid">
+    <main>
+        <div class="text-page-container">
+            <div class="detail-header">
+                <span class="detail-header__class">LINEUP</span>
+                <h1 class="detail-header__title">車種一覧</h1>
+            </div>
+            <div class="lineup-grid">
             <article class="card">
                 <div class="card__img"><img
                         src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80"
@@ -119,6 +120,7 @@
                     <a href="detail.html" class="card__more">VIEW DETAILS <span>→</span></a>
                 </div>
             </article>
+            </div>
         </div>
     </main>
 
@@ -195,6 +197,13 @@
             }
             hamburger.addEventListener('click', function () { hamburger.classList.contains('is-open') ? closeDrawer() : openDrawer(); });
             overlay.addEventListener('click', closeDrawer);
+
+            var drawerLinks = document.querySelectorAll('.nav-drawer__link, .nav-drawer__contact');
+            drawerLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    closeDrawer();
+                });
+            });
         })();
     </script>
 </body>

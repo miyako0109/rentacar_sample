@@ -774,6 +774,24 @@ img {
     padding: 60px 4% 60px;
 }
 
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+    min-width: 520px;
+}
+
+@media (max-width: 600px) {
+    .info-table th,
+    .info-table td {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
 .text-page-title {
     font-family: var(--font-mincho);
     font-size: 36px;
