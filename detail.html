@@ -9,12 +9,14 @@
     <title>車種詳細｜サンプルレンタカー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('gate.html'); }</script>
+    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('gate.html?redirect=' + encodeURIComponent(location.pathname.split('/').pop())); }</script>
     <header class="header">
         <div class="header__inner">
             <div class="header__logo"><a href="index.html">SAMPLE RENTAL</a></div>
@@ -30,7 +32,8 @@
                 </nav>
                 <a href="contact.html" class="header__btn">お問い合わせ</a>
             </div>
-            <button class="hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="js-drawer">
+            <button class="hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false"
+                aria-controls="js-drawer">
                 <span class="hamburger__line"></span>
                 <span class="hamburger__line"></span>
                 <span class="hamburger__line"></span>
@@ -60,7 +63,8 @@
         </div>
         <div class="detail-content">
             <div class="detail-left">
-                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" alt="Sedan" style="width:100%; border-radius:4px;">
+                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80"
+                    alt="Sedan" style="width:100%; border-radius:4px;">
             </div>
             <div class="detail-right">
                 <h3 class="c-section-title__ja" style="font-size:22px; margin-bottom:20px;">ご利用料金（税込）</h3>
@@ -153,13 +157,13 @@
     </footer>
 
     <script>
-        (function() {
+        (function () {
             var hamburger = document.getElementById('js-hamburger');
             var drawer = document.getElementById('js-drawer');
             var overlay = document.getElementById('js-drawer-overlay');
             function openDrawer() {
                 overlay.style.display = 'block';
-                requestAnimationFrame(function() {
+                requestAnimationFrame(function () {
                     hamburger.classList.add('is-open');
                     drawer.classList.add('is-open');
                     overlay.classList.add('is-open');
@@ -177,9 +181,9 @@
                 drawer.setAttribute('aria-hidden', 'true');
                 overlay.setAttribute('aria-hidden', 'true');
                 document.body.style.overflow = '';
-                setTimeout(function() { overlay.style.display = 'none'; }, 500);
+                setTimeout(function () { overlay.style.display = 'none'; }, 500);
             }
-            hamburger.addEventListener('click', function() { hamburger.classList.contains('is-open') ? closeDrawer() : openDrawer(); });
+            hamburger.addEventListener('click', function () { hamburger.classList.contains('is-open') ? closeDrawer() : openDrawer(); });
             overlay.addEventListener('click', closeDrawer);
         })();
     </script>

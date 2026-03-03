@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('gate.html'); }</script>
+    <script>if (!sessionStorage.getItem('gate_ok')) { location.replace('gate.html?redirect=' + encodeURIComponent(location.pathname.split('/').pop())); }</script>
 
     <!-- HEADER -->
     <header class="header">
@@ -37,7 +37,8 @@
                 </nav>
                 <a href="contact.html" class="header__btn">お問い合わせ</a>
             </div>
-            <button class="hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="js-drawer">
+            <button class="hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false"
+                aria-controls="js-drawer">
                 <span class="hamburger__line"></span>
                 <span class="hamburger__line"></span>
                 <span class="hamburger__line"></span>
@@ -243,19 +244,19 @@
                 window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
             }
         }
-        window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function () {
             generateImages();
             if (location.hash) setTimeout(scrollToAnchor, 100);
-            const fadeObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+            const fadeObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
             }, { threshold: 0.2 });
-            document.querySelectorAll('.js-fade-in').forEach(function(el) { fadeObserver.observe(el); });
+            document.querySelectorAll('.js-fade-in').forEach(function (el) { fadeObserver.observe(el); });
             var hamburger = document.getElementById('js-hamburger');
             var drawer = document.getElementById('js-drawer');
             var overlay = document.getElementById('js-drawer-overlay');
             function openDrawer() {
                 overlay.style.display = 'block';
-                requestAnimationFrame(function() {
+                requestAnimationFrame(function () {
                     hamburger.classList.add('is-open');
                     drawer.classList.add('is-open');
                     overlay.classList.add('is-open');
@@ -273,9 +274,9 @@
                 drawer.setAttribute('aria-hidden', 'true');
                 overlay.setAttribute('aria-hidden', 'true');
                 document.body.style.overflow = '';
-                setTimeout(function() { overlay.style.display = 'none'; }, 500);
+                setTimeout(function () { overlay.style.display = 'none'; }, 500);
             }
-            hamburger.addEventListener('click', function() { hamburger.classList.contains('is-open') ? closeDrawer() : openDrawer(); });
+            hamburger.addEventListener('click', function () { hamburger.classList.contains('is-open') ? closeDrawer() : openDrawer(); });
             overlay.addEventListener('click', closeDrawer);
         });
     </script>
